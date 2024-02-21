@@ -9,15 +9,17 @@ import java.util.*;
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class CD extends Item {
+    private long id;
     private String artist;
     private Date year;
     private String genre;
     public CD(){}
-    public CD(String itemName, int itemID, double itemCost, String artist, Date year, String genre) {
-        super(itemName, itemID, itemCost);
+    public CD(String itemName, long id, double itemCost, String artist, Date year, String genre) {
+        super(itemName, itemCost);
         this.artist = artist;
         this.year = year;
         this.genre = genre;
+        this.id = id;
     }
     @Override
     public int compareTo(@NotNull Item o) {
